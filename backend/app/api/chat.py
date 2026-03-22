@@ -176,8 +176,3 @@ async def chat(request: ChatRequest):
             }
 
     return EventSourceResponse(event_generator())
-
-
-@router.get("/health")
-async def health():
-    return {"status": "ok", "service": "agentforge-backend"}

@@ -9,6 +9,7 @@ from pydantic import ValidationError
 
 from app.config import ALLOWED_ORIGINS
 from app.api.chat import router as chat_router
+from app.api.health import router as health_router
 from app.db.connection import close_pool
 
 # Configure logging
@@ -79,4 +80,5 @@ app.add_middleware(
 )
 
 # Routes
+app.include_router(health_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
