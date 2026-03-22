@@ -80,5 +80,9 @@ app.add_middleware(
 )
 
 # Routes
+@app.get("/")
+async def root():
+    return {"message": "Welcome to AgentForge API", "docs_url": "/docs"}
+
 app.include_router(health_router, prefix="/api")
 app.include_router(chat_router, prefix="/api")
