@@ -8,19 +8,19 @@ export default async function LandingPage() {
   const isSignedIn = !!session?.user;
 
   return (
-    <main className="relative min-h-screen flex flex-col bg-gradient-to-b from-emerald-50/80 via-white to-emerald-50/40 text-slate-900 selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+    <main className="relative min-h-screen flex flex-col bg-gradient-to-b from-emerald-50/80 via-white to-emerald-50/40 dark:from-background dark:via-surface-container-lowest dark:to-background text-slate-900 dark:text-slate-100 selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
       {/* Ambient background elements */}
-      <div className="fixed top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-teal-200/15 rounded-full blur-[150px] pointer-events-none" />
-      <div className="fixed bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-emerald-200/15 rounded-full blur-[120px] pointer-events-none" />
+      <div className="fixed top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-teal-200/15 dark:bg-teal-500/10 rounded-full blur-[150px] pointer-events-none" />
+      <div className="fixed bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-emerald-200/15 dark:bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />
 
       {/* ── Navigation ── */}
-      <nav className="fixed top-0 w-full z-50 bg-white/70 backdrop-blur-xl border-b border-emerald-100/40">
+      <nav className="fixed top-0 w-full z-50 bg-white/70 dark:bg-background/80 backdrop-blur-xl border-b border-emerald-100/40 dark:border-white/5">
         <div className="flex justify-between items-center h-16 px-6 md:px-10 max-w-7xl mx-auto">
           <div className="flex items-center gap-2">
-            <span className="text-base font-extrabold tracking-tight text-slate-900 font-['Plus_Jakarta_Sans']">
+            <span className="text-base font-extrabold tracking-tight text-slate-900 dark:text-slate-100 font-['Plus_Jakarta_Sans']">
               AgentForge
             </span>
-            <span className="text-xs font-medium text-slate-400">for Thinkly Labs</span>
+            <span className="text-xs font-medium text-slate-400 dark:text-slate-500">for Thinkly Labs</span>
           </div>
 
           <div className="hidden md:flex items-center gap-8">
@@ -43,7 +43,7 @@ export default async function LandingPage() {
             >
               <button
                 type="submit"
-                className="bg-teal-700 hover:bg-teal-800 text-white px-5 py-2 rounded-full text-sm font-bold tracking-tight transition-all active:scale-95 shadow-md shadow-teal-700/15"
+                className="bg-teal-700 hover:bg-teal-800 text-white px-5 py-2 rounded-full text-sm font-bold tracking-tight transition-all active:scale-95 shadow-md shadow-teal-700/15 cursor-pointer"
               >
                 Get Started
               </button>
@@ -56,13 +56,13 @@ export default async function LandingPage() {
       <section className="pt-36 md:pt-44 pb-12 px-6 max-w-5xl mx-auto text-center">
         
 
-        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-slate-900 leading-[0.95] mb-7 font-['Plus_Jakarta_Sans']">
+        <h1 className="text-5xl md:text-7xl lg:text-[5.5rem] font-extrabold tracking-tight text-slate-900 dark:text-slate-100 leading-[0.95] mb-7 font-['Plus_Jakarta_Sans']">
           Find the right AI
           <br />
           agent for your team
         </h1>
 
-        <p className="text-lg md:text-xl text-slate-500 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
+        <p className="text-lg md:text-xl text-slate-500 dark:text-slate-400 font-medium leading-relaxed max-w-2xl mx-auto mb-10">
           Describe your operational pain points. We&apos;ll find the perfect Thinkly Labs AI agent for you.
         </p>
 
@@ -105,12 +105,12 @@ export default async function LandingPage() {
             const inner = (
               <>
                 <div className="flex items-start justify-between mb-6">
-                  <div className="w-10 h-10 rounded-xl bg-emerald-100/60 flex items-center justify-center">
-                    <Icon className="text-teal-700 w-5 h-5" />
+                  <div className="w-10 h-10 rounded-xl bg-emerald-100/60 dark:bg-emerald-500/10 flex items-center justify-center">
+                    <Icon className="text-teal-700 dark:text-teal-400 w-5 h-5" />
                   </div>
                 </div>
-                <p className="text-sm font-bold text-slate-800 leading-snug mb-4">{card.text}</p>
-                <span className="text-[10px] font-bold text-teal-600 uppercase tracking-[0.15em]">{card.label}</span>
+                <p className="text-sm font-bold text-slate-800 dark:text-slate-200 leading-snug mb-4">{card.text}</p>
+                <span className="text-[10px] font-bold text-teal-600 dark:text-teal-400 uppercase tracking-[0.15em]">{card.label}</span>
               </>
             );
 
@@ -118,13 +118,13 @@ export default async function LandingPage() {
               <Link
                 key={card.text}
                 href={`/chat?q=${encodeURIComponent(card.text)}`}
-                className="group bg-white/60 hover:bg-white backdrop-blur-sm p-5 rounded-2xl border border-emerald-100/40 hover:border-emerald-200/60 transition-all duration-200 hover:shadow-lg hover:shadow-teal-900/5 active:scale-[0.98] block"
+                className="group bg-white/60 dark:bg-surface-container-lowest/60 hover:bg-white dark:hover:bg-surface-container-low backdrop-blur-sm p-5 rounded-2xl border border-emerald-100/40 dark:border-white/5 hover:border-emerald-200/60 dark:hover:border-white/10 transition-all duration-200 hover:shadow-lg hover:shadow-teal-900/5 dark:hover:shadow-black/20 active:scale-[0.98] block"
               >
                 {inner}
               </Link>
             ) : (
               <form key={card.text} action={async () => { "use server"; await signIn("google", { redirectTo: "/chat" }); }} className="w-full">
-                <button type="submit" className="w-full group bg-white/60 hover:bg-white backdrop-blur-sm p-5 rounded-2xl border border-emerald-100/40 hover:border-emerald-200/60 transition-all duration-200 hover:shadow-lg hover:shadow-teal-900/5 active:scale-[0.98] text-left">
+                <button type="submit" className="w-full group bg-white/60 dark:bg-surface-container-lowest/60 hover:bg-white dark:hover:bg-surface-container-low backdrop-blur-sm p-5 rounded-2xl border border-emerald-100/40 dark:border-white/5 hover:border-emerald-200/60 dark:hover:border-white/10 transition-all duration-200 hover:shadow-lg hover:shadow-teal-900/5 dark:hover:shadow-black/20 active:scale-[0.98] text-left">
                   {inner}
                 </button>
               </form>
@@ -144,10 +144,10 @@ export default async function LandingPage() {
               await signIn("google", { redirectTo: "/chat" });
             }}
           >
-            <div className="bg-white/80 backdrop-blur-xl rounded-2xl shadow-xl shadow-teal-900/5 border border-emerald-100/40 p-3 flex items-center gap-3">
+            <div className="bg-white/80 dark:bg-surface-container-low/80 backdrop-blur-xl rounded-2xl shadow-xl shadow-teal-900/5 dark:shadow-black/40 border border-emerald-100/40 dark:border-white/5 p-3 flex items-center gap-3">
               <div className="flex-1">
                 <input
-                  className="w-full bg-emerald-50/50 border-none rounded-xl py-4 px-5 text-[15px] focus:ring-2 focus:ring-teal-500 focus:bg-white transition-all placeholder:text-slate-400 font-medium"
+                  className="w-full bg-emerald-50/50 dark:bg-background border-none rounded-xl py-4 px-5 text-[15px] focus:ring-2 focus:ring-teal-500 focus:bg-white dark:focus:bg-surface transition-all placeholder:text-slate-400 font-medium dark:text-slate-200"
                   placeholder="Ask me anything..."
                   type="text"
                 />
@@ -172,12 +172,12 @@ export default async function LandingPage() {
           ].map((feature) => {
             const Icon = feature.icon;
             return (
-              <div key={feature.title} className="bg-white/50 backdrop-blur-sm border border-emerald-100/30 rounded-2xl p-7 hover:bg-white/70 transition-all">
-                <div className="w-11 h-11 rounded-xl bg-emerald-100/50 flex items-center justify-center mb-5">
-                  <Icon className="w-5 h-5 text-teal-700" />
+              <div key={feature.title} className="bg-white/50 dark:bg-surface-container-lowest/50 backdrop-blur-sm border border-emerald-100/30 dark:border-white/5 rounded-2xl p-7 hover:bg-white/70 dark:hover:bg-surface-container-low transition-all">
+                <div className="w-11 h-11 rounded-xl bg-emerald-100/50 dark:bg-emerald-500/10 flex items-center justify-center mb-5">
+                  <Icon className="w-5 h-5 text-teal-700 dark:text-teal-400" />
                 </div>
-                <h3 className="text-sm font-bold text-slate-800 mb-2 font-['Plus_Jakarta_Sans']">{feature.title}</h3>
-                <p className="text-[13px] text-slate-500 leading-relaxed font-medium">{feature.desc}</p>
+                <h3 className="text-sm font-bold text-slate-800 dark:text-slate-200 mb-2 font-['Plus_Jakarta_Sans']">{feature.title}</h3>
+                <p className="text-[13px] text-slate-500 dark:text-slate-400 leading-relaxed font-medium">{feature.desc}</p>
               </div>
             );
           })}
@@ -185,9 +185,9 @@ export default async function LandingPage() {
       </section>
 
       {/* ── Footer ── */}
-      <footer className="w-full mt-auto py-8 border-t border-emerald-100/40 bg-white/40 backdrop-blur-sm">
+      <footer className="w-full mt-auto py-8 border-t border-emerald-100/40 dark:border-white/5 bg-white/40 dark:bg-background/40 backdrop-blur-sm">
         <div className="flex flex-col md:flex-row justify-center items-center px-6 md:px-10 max-w-7xl mx-auto gap-4">
-          <div className="text-xs font-medium text-slate-400">
+          <div className="text-xs font-medium text-slate-400 dark:text-slate-500">
             Agent Forge for Thinkly Labs
           </div>
         </div>
