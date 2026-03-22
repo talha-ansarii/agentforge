@@ -8,7 +8,7 @@ export default async function LandingPage() {
   const isSignedIn = !!session?.user;
 
   return (
-    <main className="relative min-h-screen flex flex-col bg-gradient-to-b from-emerald-50/80 via-white to-emerald-50/40 dark:from-background dark:via-surface-container-lowest dark:to-background text-slate-900 dark:text-slate-100 selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
+    <main className="relative min-h-dvh flex flex-col bg-gradient-to-b from-emerald-50/80 via-white to-emerald-50/40 dark:from-background dark:via-surface-container-lowest dark:to-background text-slate-900 dark:text-slate-100 selection:bg-primary-container selection:text-on-primary-container overflow-hidden">
       {/* Ambient background elements */}
       <div className="fixed top-[-20%] right-[-10%] w-[50vw] h-[50vw] bg-teal-200/15 dark:bg-teal-500/10 rounded-full blur-[150px] pointer-events-none" />
       <div className="fixed bottom-[-10%] left-[-10%] w-[40vw] h-[40vw] bg-emerald-200/15 dark:bg-emerald-500/10 rounded-full blur-[120px] pointer-events-none" />

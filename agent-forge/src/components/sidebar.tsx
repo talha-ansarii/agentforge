@@ -107,7 +107,7 @@ export function AppSidebar({ user: _user, isOpen, onClose }: Readonly<AppSidebar
         onClick={onClose}
       />
 
-      <aside className={`fixed left-0 top-0 h-screen w-72 flex flex-col py-6 px-5 bg-emerald-50/90 dark:bg-[#101e1e]/95 backdrop-blur-2xl rounded-r-[2rem] z-50 shadow-[0_20px_60px_rgba(0,60,50,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out ${
+      <aside className={`fixed left-0 top-0 h-dvh w-72 flex flex-col py-6 px-5 bg-emerald-50/90 dark:bg-[#101e1e]/95 backdrop-blur-2xl rounded-r-[2rem] z-50 shadow-[0_20px_60px_rgba(0,60,50,0.08)] dark:shadow-[0_20px_60px_rgba(0,0,0,0.4)] transition-transform duration-300 ease-out ${
         isOpen ? "translate-x-0" : "-translate-x-full md:translate-x-0 md:hidden"
       }`}>
         {/* Logo Header */}

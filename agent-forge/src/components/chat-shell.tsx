@@ -22,14 +22,14 @@ export function ChatShell({ user, children }: Readonly<ChatShellProps>) {
   const activeThread = threads.find((t) => t.id === activeThreadId);
 
   return (
-    <div className="bg-background text-on-background font-body min-h-screen flex selection:bg-primary-container">
+    <div className="bg-background text-on-background font-body min-h-dvh flex selection:bg-primary-container">
       <AppSidebar
         user={user}
         isOpen={sidebarOpen}
         onClose={() => setSidebarOpen(false)}
       />
 
-      <main className={`flex-1 ${sidebarOpen ? "md:ml-72" : ""} flex flex-col h-screen overflow-hidden transition-all duration-300`}>
+      <main className={`flex-1 ${sidebarOpen ? "md:ml-72" : ""} flex flex-col h-dvh overflow-hidden transition-all duration-300`}>
         {/* Top App Bar */}
         <header className="flex justify-between items-center w-full px-6 md:px-8 h-14 bg-emerald-50/60 dark:bg-[#101e1e]/80 backdrop-blur-xl sticky top-0 z-40 border-b border-emerald-100/40 dark:border-teal-800/30">
           <div className="flex items-center gap-3">
